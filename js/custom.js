@@ -119,7 +119,7 @@ function typer() {
   foo.typer([
     '<h2><span class="text-color-1">Web</span> Developer</h2>',
     '<h2>Net <span class="text-color-1">Enthusiast</span></h2>',
-    '<h2><span class="text-color-1">Frontend</span> Developer</h2>',
+    '<h2><span class="text-color-1">JavaScript</span> Ninja</h2>',
   ]);
 }
 
