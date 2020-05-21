@@ -814,6 +814,7 @@ img {
   opacity: 1;
 }
 .tv-port-image-grid {
+  width: 250%;
   margin-left: 0;
   margin-right: 0;
 }
