@@ -815,14 +815,15 @@ img {
 }
 .tv-port-image-grid {
   width: 250%;
-  margin-left: 0;
-  margin-right: 0;
+  /* margin-left: 0;
+  margin-right: 0; */
 }
 .tv-offspace-top-50 {
   margin-top: 50px !important;
 }
 .tv-offspace-top-40 {
   margin-top: 40px !important;
+  width: 250%;
 }
 .tv-grid-gutter-00 {
   padding: 0;
