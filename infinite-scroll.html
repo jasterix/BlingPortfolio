@@ -112,8 +112,6 @@
       });
     </script>
     <script>
-      const container = document.querySelector(".container");
-
       function loadImages(numImages = 8) {
         let i = 0;
         while (i < numImages) {
@@ -125,6 +123,7 @@
         }
       }
       function renderImage(imgSrc) {
+        const container = document.querySelector(".container");
         container.innerHTML += `<img src="${imgSrc}"></img>`;
       }
 
