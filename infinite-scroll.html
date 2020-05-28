@@ -122,14 +122,7 @@
       loadImages();
 
       window.addEventListener("scroll", () => {
-        console.log(
-          window.scrollY + window.innerHeight,
-          document.documentElement.scrollHeight
-        );
-        if (
-          window.scrollY + window.innerHeight >=
-          document.documentElement.scrollHeight
-        ) {
+        if (450 >= container.scrollHeight) {
           loadImages();
         }
       });
