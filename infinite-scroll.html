@@ -19,6 +19,7 @@
     <div class="tv-section-heading">
       <h2>Infinite Scroll</h2>
     </div>
+
     <div class="post-title text-center">
       <div class="tv-single-port-block">
         <div class="row">
@@ -61,13 +62,24 @@
               http://api.adorable.io/avatars/32131231 (the actual avatar ID can
               be any random integer).
             </p>
-            <span
-              >See the Pen
-              <a href="https://codepen.io/jasterix/pen/mdeZqmE">
-                Infinite Scroll naive solution</a
-              >
-              on <a href="https://codepen.io">CodePen</a>.</span
+            <!-- codepen -->
+            <iframe
+              height="168"
+              style="width: 100%;"
+              scrolling="no"
+              title="Infinite Scroll naive solution"
+              src="https://codepen.io/jasterix/embed/mdeZqmE?height=168&theme-id=dark&default-tab=result"
+              frameborder="no"
+              allowtransparency="true"
+              allowfullscreen="true"
             >
+              See the Pen
+              <a href="https://codepen.io/jasterix/pen/mdeZqmE"
+                >Infinite Scroll naive solution</a
+              >
+              by Jasterix (<a href="https://codepen.io/jasterix">@jasterix</a>)
+              on <a href="https://codepen.io">CodePen</a>.
+            </iframe>
           </div>
         </div>
         <div>
@@ -85,27 +97,6 @@
       </div>
     </div>
 
-    <!-- <script>
-      $(document).ready(function () {
-        $masonry = $(".masonry");
-        $masonry.imagesLoaded(function () {
-          $(".masonry").masonry({
-            // options
-            itemSelector: ".grid-item",
-            percentPosition: true,
-          });
-        });
-
-        var $imagePopup = $("[data-image-popup]");
-        /*Image*/
-        $imagePopup.magnificPopup({
-          type: "image",
-          gallery: {
-            enabled: true,
-          },
-        });
-      });
-    </script> -->
     <script>
       const container = document.querySelector(".avatar-container");
 
