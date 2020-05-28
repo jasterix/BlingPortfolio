@@ -37,7 +37,7 @@
               Description
             </p>
             <button onclick="loadImages()">Load Images</button>
-            <div class="container"></div>
+            <div class="avatar-container"></div>
             <div>
               <ul
                 id="items-grid"
@@ -123,7 +123,7 @@
         }
       }
       function renderImage(imgSrc) {
-        const container = document.querySelector(".container");
+        const container = document.querySelector(".avatar-container");
         container.innerHTML += `<img style="width:50%; "src="${imgSrc}"></img>`;
       }
 
