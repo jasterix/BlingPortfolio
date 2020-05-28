@@ -7,11 +7,11 @@
       .container {
         display: flex;
         flex-wrap: wrap;
-        max-width: 50%;
+        max-width: 80%;
       }
 
       img {
-        max-width: 48%;
+        max-width: 30%;
         margin: 5px;
       }
     </style>
@@ -19,10 +19,18 @@
   <body>
     <div class="tv-single-port-block">
       <div class="tv-section-heading">
-        <h2>PROJECT DETAILS WILL BE ADDED SOON!</h2>
+        <h2>Infinite Scroll</h2>
       </div>
-
-      <p
+      <div class="col-md-8">
+        <h3>Naive Implementation</h3>
+        <ul
+          id="items-grid"
+          class="row tv-offspace-top-40 tv-port-image-grid masonry clearfix"
+        >
+        <li
+            class="tv-port-item grid-item col-lg-4 col-md-3 col-sm-6 col-xs-12 tv-grid-gutter-00"
+          >
+      <!-- <p
         class="codepen"
         data-height="265"
         data-theme-id="dark"
@@ -30,7 +38,7 @@
         data-user="jasterix"
         data-slug-hash="mdeZqmE"
         style="
-          height: 265px;
+          height: 170px;
           width: 45%;
           box-sizing: border-box;
           display: flex;
@@ -41,7 +49,7 @@
           padding: 1em;
         "
         data-pen-title="Infinite Scroll naive solution"
-      >
+      > -->
         <span
           >See the Pen
           <a href="https://codepen.io/jasterix/pen/mdeZqmE">
@@ -51,6 +59,25 @@
           <a href="https://codepen.io">CodePen</a>.</span
         >
       </p>
+    </li>
+
+      <li
+      class="tv-port-item grid-item col-lg-4 col-md-3 col-sm-6 col-xs-12 tv-grid-gutter-00"
+    >
+    <div class="container"></div>
+    </li>
+</div>
+
+
+  </div>
+
+
+
+    <!-- ---------------------------------- -->
+    <!-- ---------------------------------- -->
+    <!-- ---------------------------------- -->
+    <!-- ---------------------------------- -->
+    <!-- ---------------------------------- -->
       <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
       <!-- <div class="row">
@@ -75,11 +102,7 @@
           </div>
         </div>
         -->
-      <div class="col-md-8">
-        <h2>Naive Solution</h2>
-        <div class="container"></div>
-      </div>
-    </div>
+   
 
     <script>
       $(document).ready(function () {
