@@ -117,6 +117,9 @@
       });
     </script>
     <script>
+        $(document).ready(function () {
+          loadImages()
+        });
       const container = document.querySelector(".container")
 
 
@@ -131,7 +134,8 @@ function loadImages(numImages = 8){
   }
 
 }
-loadImages()
+
+
 
 window.addEventListener("scroll", ()=> {
 console.log(window.scrollY+ window.innerHeight, document.documentElement.scrollHeight)
