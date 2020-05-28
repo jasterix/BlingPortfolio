@@ -36,7 +36,7 @@
             <p class="tv-text-high tv-alt-text tv-offspace-botttom-3per">
               Description
             </p>
-
+            <button onclick="loadImages()">Load Images</button>
             <div>
               <ul
                 id="items-grid"
@@ -78,12 +78,7 @@
                 href="./images/statusImages/Screenshot 100-203.png"
                 data-image-popup=""
               >
-                <div class="container tv-port-img-overlay">
-                  <img
-                    src="./images/statusImages/Screenshot 100-203.png"
-                    alt="portfolio-image"
-                  />
-                </div>
+                <div class="container"></div>
                 <div class="tv-port-overlay-icon">
                   <div class="tv-port-icon">
                     <div aria-hidden="true" class=""></div>
@@ -117,24 +112,23 @@
       });
     </script>
     <script>
+      const container = document.querySelector(".container");
+
       function loadImages(numImages = 8) {
-        const container = document.querySelector(".container");
         let i = 0;
         while (i < numImages) {
           let randomId = Math.floor(Math.random() * Number.MAX_SAFE_INTEGER);
-          const img = document.createElement("img");
-          img.src = `http://api.adorable.io/avatars/${randomId}`;
-          container.appendChild(img);
+
+          let imgSrc = `http://api.adorable.io/avatars/${randomId}`;
+          renderImage(imgSrc);
           i++;
         }
       }
-      setTimeout(loadImages(), 300);
+      function renderImage(imgSrc) {
+        container.innerHTML += `<img src="${imgSrc}"></img>`;
+      }
 
       window.addEventListener("scroll", () => {
-        console.log(
-          window.scrollY + window.innerHeight,
-          document.documentElement.scrollHeight
-        );
         if (
           window.scrollY + window.innerHeight >=
           document.documentElement.scrollHeight
