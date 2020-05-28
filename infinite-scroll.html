@@ -6,62 +6,68 @@
   </head>
   <body>
     <div class="tv-section-heading">
-      <h2>HTTP Status Gipher</h2>
+      <h2>Infinite Scroll</h2>
     </div>
     <div class="post-title text-center">
-    <div class="tv-single-port-block">
-      <div class="row">
-        <div class="col-md-4">
-          <div class="tv-info-wrap tv-black-text tv-alt-font">
-            <div>
-              <span class="tv-para tv-light-blackgray-text">Data Created:</span>
-              <span class="tv-para">July 2019</span>
-            </div>
+      <div class="tv-single-port-block">
+        <div class="row">
+          <div class="col-md-4">
+            <!---------------------------------------------------- Sidebar --------------------------------------------------------------->
+            <div class="tv-info-wrap tv-black-text tv-alt-font">
+              <div>
+                <span class="tv-para tv-light-blackgray-text"
+                  >Data Created:</span
+                >
+                <span class="tv-para">July 2019</span>
+              </div>
 
-            <div>
-              <span class="tv-para tv-light-blackgray-text"
-                >Languages / Frameworks:</span
-              ><br>
-              <span class="tv-para">- Vanilla JavaScript Frontend</span><br>
-              <span class="tv-para">- Ruby on Rails & PostgreSQL Backend</span><br>
-              <span class="tv-para">- Semantic UI</span>
-            </div>
-          
-       
-          <div class="col-md-8">
-            
-              
-            <p class="tv-text-high tv-alt-text tv-offspace-botttom-3per">
-              Status is a Giphy API that generates a separate GIF for each assigned HTTP status
-              code
-            </p>
-    </div>
-    <div>
-      <ul
-        id="items-grid"
-        class="row tv-offspace-top-40 tv-port-image-grid masonry clearfix"
-      >
-        <li
-        class="tv-port-item grid-item col-lg-4 col-md-3 col-sm-6 col-xs-12 tv-grid-gutter-00"
-        >
-          <a href="https://media.giphy.com/media/huDymbVWlPdrSDCa1u/giphy.gif" data-image-popup="">
-            <div class="tv-port-img-overlay">
-              <img
-              
-                src="https://media.giphy.com/media/huDymbVWlPdrSDCa1u/giphy.gif"
-                alt="portfolio-image"
-              />
-            </div>
-            <div class="tv-port-overlay-icon">
-              <div class="tv-port-icon">
-                <div aria-hidden="true" class="ti-search"></div>
+              <div>
+                <span class="tv-para tv-light-blackgray-text"
+                  >Languages / Frameworks:</span
+                ><br />
+                <span class="tv-para">- Vanilla JavaScript Frontend</span><br />
               </div>
             </div>
-          </a>
-        </li>
-        </ul>
+          </div>
+
+          <div class="col-md-8">
+            <!---------------------------------------------------- Main area --------------------------------------------------------------->
+
+            <p class="tv-text-high tv-alt-text tv-offspace-botttom-3per">
+              Description
+            </p>
+
+            <div>
+              <ul
+                id="items-grid"
+                class="row tv-offspace-top-40 tv-port-image-grid masonry clearfix"
+              >
+                <li
+                  class="tv-port-item grid-item col-lg-4 col-md-3 col-sm-6 col-xs-12 tv-grid-gutter-00"
+                >
+                  <a
+                    href="./images/statusImages/Screenshot 100-203.png"
+                    data-image-popup=""
+                  >
+                    <div class="tv-port-img-overlay">
+                      <img
+                        src="./images/statusImages/Screenshot 100-203.png"
+                        alt="portfolio-image"
+                      />
+                    </div>
+                    <div class="tv-port-overlay-icon">
+                      <div class="tv-port-icon">
+                        <div aria-hidden="true" class=""></div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-        
+      </div>
+    </div>
     <script>
       $(document).ready(function () {
         $masonry = $(".masonry");
