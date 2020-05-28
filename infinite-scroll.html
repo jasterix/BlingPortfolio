@@ -74,11 +74,11 @@
             <li
               class="tv-port-item grid-item col-lg-4 col-md-3 col-sm-6 col-xs-12 tv-grid-gutter-00"
             >
-              <a
+              <!-- <a
                 href="./images/statusImages/Screenshot 100-203.png"
                 data-image-popup=""
-              >
-                <div class="tv-port-img-overlay">
+              > -->
+                <div class="container tv-port-img-overlay">
                   <img
                     src="./images/statusImages/Screenshot 100-203.png"
                     alt="portfolio-image"
@@ -115,6 +115,32 @@
           },
         });
       });
+    </script>
+    <script>
+      const container = document.querySelector(".container")
+
+
+function loadImages(numImages = 8){
+  let i =0
+  while (i < numImages){
+   let randomId = Math.floor(Math.random() * Number.MAX_SAFE_INTEGER) 
+   const img = document.createElement("img")
+   img.src= `http://api.adorable.io/avatars/${randomId}`
+   container.appendChild(img)
+   i++
+  }
+
+}
+loadImages()
+
+window.addEventListener("scroll", ()=> {
+console.log(window.scrollY+ window.innerHeight, document.documentElement.scrollHeight)
+  if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight){
+    loadImages()
+  }
+})
+
+
     </script>
   </body>
 </html>
