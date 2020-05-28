@@ -3,6 +3,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .avatar-container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      img {
+        max-width: 23%;
+        margin: 5px;
+      }
+    </style>
   </head>
   <body>
     <div class="tv-section-heading">
@@ -25,7 +36,7 @@
                 <span class="tv-para tv-light-blackgray-text"
                   >Languages / Frameworks:</span
                 ><br />
-                <span class="tv-para">- Vanilla JavaScript Frontend</span><br />
+                <span class="tv-para">- Vanilla JavaScript/CSS </span><br />
               </div>
             </div>
           </div>
@@ -34,37 +45,19 @@
             <!---------------------------------------------------- Main area --------------------------------------------------------------->
 
             <p class="tv-text-high tv-alt-text tv-offspace-botttom-3per">
-              Description
+              Challenge:
             </p>
-            <button onclick="loadImages()">Load Images</button>
-            <div class="avatar-container"></div>
-            <div>
-              <ul
-                id="items-grid"
-                class="row tv-offspace-top-40 tv-port-image-grid masonry clearfix"
-              >
-                <li
-                  class="tv-port-item grid-item col-lg-4 col-md-3 col-sm-6 col-xs-12 tv-grid-gutter-00"
-                >
-                  <a
-                    href="./images/statusImages/Screenshot 100-203.png"
-                    data-image-popup=""
-                  >
-                    <div class="tv-port-img-overlay">
-                      <img
-                        src="./images/statusImages/Screenshot 100-203.png"
-                        alt="portfolio-image"
-                      />
-                    </div>
-                    <div class="tv-port-overlay-icon">
-                      <div class="tv-port-icon">
-                        <div aria-hidden="true" class=""></div>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-              </ul>
-            </div>
+
+            <p>
+              Build an image viewer with infinite scrolling, similar to
+              Pinterest.
+            </p>
+            <p>
+              For the purpose of this challenge, images can be random avatars,
+              generated using this free API, e.g.
+              http://api.adorable.io/avatars/32131231 (the actual avatar ID can
+              be any random integer).
+            </p>
           </div>
         </div>
         <div>
@@ -75,16 +68,33 @@
             <li
               class="tv-port-item grid-item col-lg-4 col-md-3 col-sm-6 col-xs-12 tv-grid-gutter-00"
             >
-              <a
-                href="./images/statusImages/Screenshot 100-203.png"
-                data-image-popup=""
-              >
-                <div class="tv-port-overlay-icon">
-                  <div class="tv-port-icon">
-                    <div aria-hidden="true" class=""></div>
+              <div class="tv-port-overlay-icon">
+                <div class="tv-port-icon">
+                  <div aria-hidden="true" class="">
+                    <span
+                      >See the Pen
+                      <a href="https://codepen.io/jasterix/pen/mdeZqmE">
+                        Infinite Scroll naive solution</a
+                      >
+                      by Jasterix (<a href="https://codepen.io/jasterix"
+                        >@jasterix</a
+                      >) on <a href="https://codepen.io">CodePen</a>.</span
+                    >
                   </div>
                 </div>
-              </a>
+              </div>
+            </li>
+
+            <li
+              class="tv-port-item grid-item col-lg-4 col-md-3 col-sm-6 col-xs-12 tv-grid-gutter-00"
+            >
+              <div class="tv-port-overlay-icon">
+                <div class="tv-port-icon">
+                  <div aria-hidden="true" class="">
+                    <div class="avatar-container"></div>
+                  </div>
+                </div>
+              </div>
             </li>
           </ul>
         </div>
@@ -112,22 +122,25 @@
       });
     </script>
     <script>
+      const container = document.querySelector(".avatar-container");
+
       function loadImages(numImages = 8) {
         let i = 0;
         while (i < numImages) {
           let randomId = Math.floor(Math.random() * Number.MAX_SAFE_INTEGER);
-
-          let imgSrc = `http://api.adorable.io/avatars/${randomId}`;
-          renderImage(imgSrc);
+          const img = document.createElement("img");
+          img.src = `http://api.adorable.io/avatars/${randomId}`;
+          container.appendChild(img);
           i++;
         }
       }
-      function renderImage(imgSrc) {
-        const container = document.querySelector(".avatar-container");
-        container.innerHTML += `<img style="width:50%; "src="${imgSrc}"></img>`;
-      }
+      loadImages();
 
       window.addEventListener("scroll", () => {
+        console.log(
+          window.scrollY + window.innerHeight,
+          document.documentElement.scrollHeight
+        );
         if (
           window.scrollY + window.innerHeight >=
           document.documentElement.scrollHeight
