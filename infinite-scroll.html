@@ -117,9 +117,8 @@
       });
     </script>
     <script>
-      const container = document.querySelector(".container");
-
       function loadImages(numImages = 8) {
+        const container = document.querySelector(".container");
         let i = 0;
         while (i < numImages) {
           let randomId = Math.floor(Math.random() * Number.MAX_SAFE_INTEGER);
@@ -129,7 +128,7 @@
           i++;
         }
       }
-      window.setTimeout(loadImages(), 300);
+      setTimeout(loadImages(), 300);
 
       window.addEventListener("scroll", () => {
         console.log(
