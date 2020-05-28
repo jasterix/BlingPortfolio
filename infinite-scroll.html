@@ -3,12 +3,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      img {
+        max-width: 48%;
+        margin: 5px;
+      }
+    </style>
   </head>
   <body>
     <div class="tv-single-port-block">
       <div class="tv-section-heading">
         <h2>PROJECT DETAILS WILL BE ADDED SOON!</h2>
       </div>
+      <div class="container"></div>
       <p
         class="codepen"
         data-height="265"
@@ -38,6 +50,78 @@
         >
       </p>
       <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+      <script>
+        function getDocumentHeight() {
+          const body = document.body;
+          const html = document.documentElement;
+
+          return Math.max(
+            body.scrollHeight,
+            body.offsetHeight,
+            html.clientHeight,
+            html.scrollHeight,
+            html.offsetHeight
+          );
+        }
+
+        function getScrollTop() {
+          return window.pageYOffset !== undefined
+            ? window.pageYOffset
+            : (
+                document.documentElement ||
+                document.body.parentNode ||
+                document.body
+              ).scrollTop;
+        }
+
+        function generateImageSourceUrl() {
+          const hash = Math.floor(Math.random() * Number.MAX_SAFE_INTEGER);
+          return `http://api.adorable.io/avatars/250/${hash}`;
+        }
+
+        function getElementImage() {
+          const cssImageClass = "element-list__item__image";
+          const cssImageLoadingClass = `${cssImageClass}--loading`;
+
+          const image = new Image();
+          image.className = `${cssImageClass} ${cssImageLoadingClass}`;
+          image.src = generateImageSourceUrl();
+          image.onload = function () {
+            setTimeout(
+              () => image.classList.remove(cssImageLoadingClass),
+              5000
+            );
+          };
+
+          return image;
+        }
+
+        function getElement() {
+          const elementImage = getElementImage();
+          const element = document.createElement("div");
+          element.className = "element-list__item";
+          element.appendChild(elementImage);
+          return element;
+        }
+
+        function loadNextBatch(batchSize = 9) {
+          while (batchSize--) {
+            const element = getElement();
+            elementList.appendChild(element);
+          }
+        }
+
+        const elementList = document.querySelector(".element-list");
+
+        // Load the first batch of elements
+        loadNextBatch();
+
+        // Load more batches when scorlling to the end
+        window.onscroll = function () {
+          if (getScrollTop() < getDocumentHeight() - window.innerHeight) return;
+          loadNextBatch();
+        };
+      </script>
       <!-- <div class="row">
         <div class="col-md-4">
           <div class="tv-info-wrap tv-black-text tv-alt-font">
